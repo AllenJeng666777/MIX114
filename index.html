@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Classification</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { padding: 8px; font-size: 16px; margin: 10px; }
+        button { padding: 8px 12px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Age Classification</h1>
+    <p>Enter your age and click the button to check your category.</p>
+
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button onclick="checkAge()">Check Age</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkAge() {
+            let age = document.getElementById("ageInput").value; // Get age from input field
+            let message = "";
+
+            if (age < 12) {
+                message = "You are a child.";
+            } else if (age >= 12 && age < 18) {
+                message = "You are a teen.";
+            } else {
+                message = "You are an adult.";
+            }
+
+            document.getElementById("result").innerHTML = message; // Display result in paragraph
+            console.log(message); // Log to console
+        }
+    </script>
+
+</body>
+</html>
